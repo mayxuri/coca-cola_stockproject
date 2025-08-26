@@ -112,7 +112,7 @@ today = datetime.now().date()
 start_live = today - timedelta(days=30)
 
 # Download live stock data
-live_data = yf.download('KO', start=start_live, end=today + timedelta(days=1), interval='1d')
+live_data = yf.download('KO', start=start_live, end=today + timedelta(days=1), interval='1d', auto_adjust=False)
 # live_data = live_data[live_data['Close'] > 0]  # Remove zero or invalid rows
 
 # # Drop rows with missing OHLC data
